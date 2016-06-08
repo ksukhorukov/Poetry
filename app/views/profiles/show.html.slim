@@ -1,0 +1,34 @@
+- model_class = User
+.page-header
+  h1=t '.title', :default => model_class.model_name.human.titleize
+
+p
+  strong= model_class.human_attribute_name(:email) + ':'
+  br
+  = @profile.user.email
+p
+  strong= model_class.human_attribute_name(:name) + ':'
+  br
+  = @profile.name
+p
+  strong= model_class.human_attribute_name(:biography) + ':'
+  br
+  = @profile.biography
+
+p
+  strong
+    | poems count:
+  =< link_to poems_path + "?profile_id=#{@profile.id}" do
+    = pluralize @profile.user.poems.count, 'poem'
+p
+  strong
+    | stories count
+  =< link_to short_stories_path + "?profile_id=#{@profile.id}" do
+    = pluralize@profile.user.short_stories.count, 'story'
+
+
+
+
+
+= link_to t('.edit', :default => t("helpers.links.edit")), '/profile/edit', :class => 'btn btn-default'
+

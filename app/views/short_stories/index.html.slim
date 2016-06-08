@@ -1,0 +1,33 @@
+- model_class = ShortStory
+.page-header
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+= paginate @short_stories
+table.table.table-striped
+  thead
+    tr
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:title)
+      th= model_class.human_attribute_name(:content)
+      th= model_class.human_attribute_name(:short_description)
+      th= model_class.human_attribute_name(:user_id)
+      th= model_class.human_attribute_name(:created_at)
+      th=t '.actions', :default => t("helpers.actions")
+  tbody
+    - @short_stories.each do |short_story|
+      tr
+        td= link_to short_story.id, short_story_path(short_story)
+        td= link_to short_story.title, short_story_path(short_story)
+        td= raw short_story.content.gsub(/\r\n/, '<br/>')
+        td= short_story.short_description
+        td= short_story.user.email
+        td=l short_story.created_at
+        td
+          - if current_user.present? && current_user == short_story.user
+            = link_to t('.edit', :default => t("helpers.links.edit")), edit_short_story_path(short_story), :class => 'btn btn-default btn-xs'
+            '
+            = link_to t('.destroy', :default => t("helpers.links.destroy")), short_story_path(short_story), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+          - else
+            = link_to t('.show', :default => t("helpers.links.show")), short_story_path(short_story), :class => 'btn btn-default btn-xs'
+= paginate @short_stories
+br
+= link_to t('.new', :default => t("helpers.links.new")), new_short_story_path, :class => 'btn btn-primary', style: 'zoom:2;'

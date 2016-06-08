@@ -1,0 +1,50 @@
+.page
+  .page-header
+    h1 Stories
+  table.table.table-striped
+    thead
+      tr
+        th= Poem.human_attribute_name(:id)
+        th= Poem.human_attribute_name(:title)
+        th= Poem.human_attribute_name(:content)
+        th= Poem.human_attribute_name(:short_description)
+        th= Poem.human_attribute_name(:user_id)
+        th= Poem.human_attribute_name(:created_at)
+    tbody
+      - @short_stories.each do |short_story|
+        tr
+          td= link_to short_story.id, short_story_path(short_story)
+          td
+            = link_to short_story_path(short_story) do
+              = short_story.title
+          td= raw short_story.content.gsub(/\r\n/, '<br/>')
+          td= short_story.short_description
+          td= short_story.user.name
+          td=l short_story.created_at
+
+
+  hr
+
+
+  .page-header
+    h1 Poems
+    table.table.table-striped
+      thead
+        tr
+          th= ShortStory.human_attribute_name(:id)
+          th= ShortStory.human_attribute_name(:title)
+          th= ShortStory.human_attribute_name(:content)
+          th= ShortStory.human_attribute_name(:metaphor)
+          th= ShortStory.human_attribute_name(:user_id)
+          th= ShortStory.human_attribute_name(:created_at)
+      tbody
+        - @poems.each do |poem|
+          tr
+            td= link_to poem.id, poem_path(poem)
+            td
+              = link_to poem_path(poem) do
+                = poem.title
+            td= raw poem.content.gsub(/\r\n/, '<br/>')
+            td= poem.metaphor
+            td= poem.user.profile.name
+            td=l poem.created_at

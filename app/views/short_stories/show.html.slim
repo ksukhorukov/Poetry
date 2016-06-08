@@ -1,0 +1,27 @@
+p
+  h1= @short_story.title
+  ' by
+  i
+    = link_to profile_composers_path(profile_id: @short_story.user.profile.id) do
+      = @short_story.user.profile.name
+p= l @short_story.created_at
+table.table.table-striped
+  tbody
+    tr
+      td= @short_story.short_description
+    tr
+      td= raw @short_story.content.gsub(/\r\n/, '<br/>')
+    tr
+      td
+        - @short_story.tags.each do |tag|
+          =< link_to composes_path(tag_name: tag.name) do
+            = tag.name
+
+
+hr
+= link_to t('.back', :default => t("helpers.links.back")), short_stories_path, :class => 'btn btn-default'
+'
+- if current_user.present? && current_user == @short_story.user
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_short_story_path(@short_story), :class => 'btn btn-default'
+  '
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), short_story_path(@short_story), :method => "delete", :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))}, :class => 'btn btn-danger'

@@ -1,0 +1,30 @@
+= form_for @poem, html: { class: "form form-horizontal poem" } do |f|
+  .form-group
+    = f.label :title, :class => 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :title, :class => 'form-control'
+      = f.error_span(:title)
+  .form-group
+    = f.label :content, :class => 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_area :content, class: 'form-control', data: {content_input: ''}, rows: 5
+      = f.error_span(:content)
+  .form-group
+    = f.label :metaphor, :class => 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :metaphor, :class => 'form-control'
+      = f.error_span(:metaphor)
+
+  .form-group
+    = label_tag 'tags',nil, class: 'control-label col-lg-2'
+    .col-lg-10
+      = text_field_tag 'tags', @poem.tags.pluck(:name).join(', '), :class => 'form-control', disabled: :disabled, data: {tags_field: ''}
+
+  = hidden_field_tag 'tags_id', @poem.tags.pluck(:id).join(',')
+
+
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil, :class => 'btn btn-primary'
+      '
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), poems_path, :class => 'btn'

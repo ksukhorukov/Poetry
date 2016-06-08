@@ -1,0 +1,1779 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'poems'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'poems_tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'profiles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'short_stories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'short_stories_tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mSQL (12.9ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (31.8ms)[0m  DROP TABLE "poems" CASCADE
+  [1m[36m (6.8ms)[0m  [1mCREATE TABLE "poems" ("id" serial primary key, "title" character varying, "content" character varying, "metaphor" character varying, "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.1ms)[0m  DROP TABLE "poems_tags" CASCADE
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "poems_tags" ("id" serial primary key, "poem_id" integer, "tag_id" integer) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_poems_tags_on_poem_id" ON "poems_tags" USING btree ("poem_id")
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_poems_tags_on_tag_id" ON "poems_tags" USING btree ("tag_id")[0m
+  [1m[35m (2.9ms)[0m  DROP TABLE "profiles" CASCADE
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "profiles" ("id" serial primary key, "name" character varying, "biography" text, "user_id" integer) [0m
+  [1m[35m (2.2ms)[0m  DROP TABLE "short_stories" CASCADE
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "short_stories" ("id" serial primary key, "title" character varying, "content" character varying, "short_description" character varying, "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.7ms)[0m  DROP TABLE "short_stories_tags" CASCADE
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "short_stories_tags" ("id" serial primary key, "short_story_id" integer, "tag_id" integer) [0m
+  [1m[35m (2.2ms)[0m  CREATE  INDEX  "index_short_stories_tags_on_short_story_id" ON "short_stories_tags" USING btree ("short_story_id")
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_short_stories_tags_on_tag_id" ON "short_stories_tags" USING btree ("tag_id")[0m
+  [1m[35m (1.9ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (6.8ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (4.8ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (22.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "name" character varying, "biography" text) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_users_on_name" ON "users" USING btree ("name")[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (0.9ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (5.3ms)[0m  [1mDROP TABLE "poems" CASCADE[0m
+  [1m[35m (8.1ms)[0m  CREATE TABLE "poems" ("id" serial primary key, "title" character varying, "content" character varying, "metaphor" character varying, "user_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.4ms)[0m  [1mDROP TABLE "poems_tags" CASCADE[0m
+  [1m[35m (3.1ms)[0m  CREATE TABLE "poems_tags" ("id" serial primary key, "poem_id" integer, "tag_id" integer) 
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX  "index_poems_tags_on_poem_id" ON "poems_tags" USING btree ("poem_id")[0m
+  [1m[35m (1.7ms)[0m  CREATE  INDEX  "index_poems_tags_on_tag_id" ON "poems_tags" USING btree ("tag_id")
+  [1m[36m (6.3ms)[0m  [1mCREATE TABLE "profiles" ("id" serial primary key, "name" character varying, "biography" text, "user_id" integer) [0m
+  [1m[35m (2.7ms)[0m  DROP TABLE "short_stories" CASCADE
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "short_stories" ("id" serial primary key, "title" character varying, "content" character varying, "short_description" character varying, "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.7ms)[0m  DROP TABLE "short_stories_tags" CASCADE
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "short_stories_tags" ("id" serial primary key, "short_story_id" integer, "tag_id" integer) [0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_short_stories_tags_on_short_story_id" ON "short_stories_tags" USING btree ("short_story_id")
+  [1m[36m (1.8ms)[0m  [1mCREATE  INDEX  "index_short_stories_tags_on_tag_id" ON "short_stories_tags" USING btree ("tag_id")[0m
+  [1m[35m (2.1ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.7ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (8.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "name" character varying, "biography" text) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.9ms)[0m  [1mCREATE  INDEX  "index_users_on_name" ON "users" USING btree ("name")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160608144230')
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "love"], ["created_at", "2016-06-08 16:06:40.825209"], ["updated_at", "2016-06-08 16:06:40.825209"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "me"], ["created_at", "2016-06-08 16:06:40.834180"], ["updated_at", "2016-06-08 16:06:40.834180"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "tender"], ["created_at", "2016-06-08 16:06:40.842085"], ["updated_at", "2016-06-08 16:06:40.842085"]]
+  [1m[35m (5.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "I"], ["created_at", "2016-06-08 16:06:40.849838"], ["updated_at", "2016-06-08 16:06:40.849838"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "want"], ["created_at", "2016-06-08 16:06:40.851968"], ["updated_at", "2016-06-08 16:06:40.851968"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "to"], ["created_at", "2016-06-08 16:06:40.853649"], ["updated_at", "2016-06-08 16:06:40.853649"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "get"], ["created_at", "2016-06-08 16:06:40.855262"], ["updated_at", "2016-06-08 16:06:40.855262"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "this"], ["created_at", "2016-06-08 16:06:40.856836"], ["updated_at", "2016-06-08 16:06:40.856836"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "job"], ["created_at", "2016-06-08 16:06:40.858421"], ["updated_at", "2016-06-08 16:06:40.858421"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Netherlands"], ["created_at", "2016-06-08 16:06:40.860229"], ["updated_at", "2016-06-08 16:06:40.860229"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-06-08 16:06:40.862757"], ["updated_at", "2016-06-08 16:06:40.862757"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "dog"], ["created_at", "2016-06-08 16:06:40.864506"], ["updated_at", "2016-06-08 16:06:40.864506"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "tree"], ["created_at", "2016-06-08 16:06:40.866115"], ["updated_at", "2016-06-08 16:06:40.866115"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "fire"], ["created_at", "2016-06-08 16:06:40.867887"], ["updated_at", "2016-06-08 16:06:40.867887"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "ocean"], ["created_at", "2016-06-08 16:06:40.869575"], ["updated_at", "2016-06-08 16:06:40.869575"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "poetry"], ["created_at", "2016-06-08 16:06:40.871193"], ["updated_at", "2016-06-08 16:06:40.871193"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "misc"], ["created_at", "2016-06-08 16:06:40.873156"], ["updated_at", "2016-06-08 16:06:40.873156"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "waves"], ["created_at", "2016-06-08 16:06:40.874811"], ["updated_at", "2016-06-08 16:06:40.874811"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "rock"], ["created_at", "2016-06-08 16:06:40.877756"], ["updated_at", "2016-06-08 16:06:40.877756"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "rap"], ["created_at", "2016-06-08 16:06:40.880194"], ["updated_at", "2016-06-08 16:06:40.880194"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "lyrics"], ["created_at", "2016-06-08 16:06:40.882627"], ["updated_at", "2016-06-08 16:06:40.882627"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/poems/new" for ::1 at 2016-06-08 19:06:54 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (3.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PoemsController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 401 Unauthorized in 59ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 19:06:55 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 2011ms (Views: 1978.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-7d460c5c040cd08ed793ac36ec2c1381bcff10615117159fb4fe6a6cd2d252af.css?body=1" for ::1 at 2016-06-08 19:06:57 +0300
+
+
+Started GET "/assets/scaffolds.self-1e56b21ac4f482fd731a0173185bf9172c9d67d1d9f63823666d791721181aed.css?body=1" for ::1 at 2016-06-08 19:06:57 +0300
+
+
+Started GET "/assets/application.self-1638da7519be51c20818999b173b017fe39e2342df28c20215a3733c2c9ddf58.js?body=1" for ::1 at 2016-06-08 19:06:57 +0300
+
+
+Started POST "/users/sign_in" for ::1 at 2016-06-08 19:06:59 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1ak03MflTrnyMPz03acUZjd+1Myq7mI2VlncA/HP5yx/r70R5lxMMYojgi/BemXKbHxFc/SpaAtnG/ksCaq3cA==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "admin@example.com"]]
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.8ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1ak03MflTrnyMPz03acUZjd+1Myq7mI2VlncA/HP5yx/r70R5lxMMYojgi/BemXKbHxFc/SpaAtnG/ksCaq3cA==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mCACHE (0.0ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 305ms (Views: 144.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:07:03 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mPoem Load (2.0ms)[0m  SELECT "poems".* FROM "poems"
+  Rendered poems/index.html.slim within layouts/application (14.7ms)
+Completed 200 OK in 87ms (Views: 75.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/poems/new" for ::1 at 2016-06-08 19:07:05 +0300
+Processing by PoemsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 19:07:05 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 89ms (Views: 86.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-06-08 19:07:08 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C3+gpRTBYlqufsmyvz8TyWR/irf6K6zzUPLe+W2tvpKheSloNXhg0tZtt2mj4mJlP30bCKRsps5hsPvWlcjuzg==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "admin@example.com"]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.7ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C3+gpRTBYlqufsmyvz8TyWR/irf6K6zzUPLe+W2tvpKheSloNXhg0tZtt2mj4mJlP30bCKRsps5hsPvWlcjuzg==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mCACHE (0.0ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 234ms (Views: 81.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-06-08 19:07:15 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/registrations/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 76ms (Views: 72.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2016-06-08 19:07:21 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+njUPfCtamygZ//xgvwvmc96qUOXhwJ3xettfZWRafRQfl3w0RRo5Nh0gSqeIV41lHg4/MnACEr0qUhSbfQ5qA==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (0.2ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 242ms (Views: 73.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2016-06-08 19:07:31 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bv4K08jp7ksC6K8tQB1Q/Dd3GD1wmnkHsJje9JZgyCzE+IMe6VDsw3r70fZcwCFQbHWJgi7dczqB2vvbbgWYcA==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mTag Load (0.7ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password") VALUES ($1, $2) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$11$y4CyUIh6l8hALRdcQtWQROosoPKHRxMWDkDrUCHSgcSvJBsWvESxK"]]
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "profiles" DEFAULT VALUES RETURNING "id"
+  [1m[36mProfile Load (0.5ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "profiles" SET "user_id" = $1 WHERE "profiles"."id" = $2  [["user_id", 1], ["id", 1]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = $6[0m  [["last_sign_in_at", "2016-06-08 16:07:31.240515"], ["current_sign_in_at", "2016-06-08 16:07:31.240515"], ["last_sign_in_ip", "::1/128"], ["current_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["id", 1]]
+  [1m[35m (5.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/poems/new
+Completed 302 Found in 228ms (ActiveRecord: 18.6ms)
+
+
+Started GET "/poems/new" for ::1 at 2016-06-08 19:07:31 +0300
+Processing by PoemsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (1.1ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered poems/_form.html.slim (31.7ms)
+  Rendered poems/new.html.slim within layouts/application (38.2ms)
+Completed 200 OK in 119ms (Views: 105.8ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/poems" for ::1 at 2016-06-08 19:07:54 +0300
+Processing by PoemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JnynmzPoC2cl9HcvvDrzVdg858DCGEuUK9747Lko0XSMei5WElEJ713nCfSg54L5gz52f5xfQakanN3DQU2BKA==", "poem"=>{"title"=>"test", "content"=>"love netherlangs", "metaphor"=>"test"}, "tags_id"=>"1", "commit"=>"Create Poem"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "poems" ("title", "content", "metaphor", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "test"], ["content", "love netherlangs"], ["metaphor", "test"], ["user_id", 1], ["created_at", "2016-06-08 16:07:54.158582"], ["updated_at", "2016-06-08 16:07:54.158582"]]
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "poems_tags" ("tag_id", "poem_id") VALUES ($1, $2) RETURNING "id"  [["tag_id", 1], ["poem_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/poems/1
+Completed 302 Found in 23ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/poems/1" for ::1 at 2016-06-08 19:07:54 +0300
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mPoem Load (0.2ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "poems_tags" ON "tags"."id" = "poems_tags"."tag_id" WHERE "poems_tags"."poem_id" = $1  [["poem_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered poems/show.html.slim within layouts/application (17.2ms)
+Completed 200 OK in 107ms (Views: 102.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/composes?tag_name=love" for ::1 at 2016-06-08 19:07:59 +0300
+Processing by HomesController#index as HTML
+  Parameters: {"tag_name"=>"love"}
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT 1[0m  [["name", "love"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT 1  [["name", "love"]]
+  [1m[36mShortStory Load (13.3ms)[0m  [1mSELECT "short_stories".* FROM "short_stories" INNER JOIN "short_stories_tags" ON "short_stories"."id" = "short_stories_tags"."short_story_id" WHERE "short_stories_tags"."tag_id" = $1[0m  [["tag_id", 1]]
+  [1m[35mPoem Load (0.3ms)[0m  SELECT "poems".* FROM "poems" INNER JOIN "poems_tags" ON "poems"."id" = "poems_tags"."poem_id" WHERE "poems_tags"."tag_id" = $1  [["tag_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered homes/index.html.slim within layouts/application (34.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 122ms (Views: 80.3ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:08:36 +0300
+Processing by ProfilesController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (15.6ms)
+Completed 200 OK in 111ms (Views: 105.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/exit" for ::1 at 2016-06-08 19:08:40 +0300
+Processing by ProfilesController#exit as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:08:40 +0300
+Processing by ProfilesController#show as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 19:08:40 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/devise-4.1.1/app/views/devise/sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 88ms (Views: 83.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-06-08 19:09:06 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cOoWdXIxrRUpNAmzYoQfn+xKcanYSQ2G5EhLKX3uO6va7J+4U4ivnVEnd2h+WW4zt0jgFoYOB7vVCm4GhYtr9w==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "admin@example.com"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2 WHERE "users"."id" = $3[0m  [["current_sign_in_at", "2016-06-08 16:09:06.951483"], ["sign_in_count", 2], ["id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 159ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:09:06 +0300
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (5.7ms)
+Completed 200 OK in 70ms (Views: 64.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:09:12 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoem Load (0.2ms)[0m  SELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (3.9ms)
+Completed 200 OK in 132ms (Views: 127.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:09:19 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mShortStory Load (0.2ms)[0m  [1mSELECT "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (17.2ms)
+Completed 200 OK in 86ms (Views: 80.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:09:24 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoem Load (0.7ms)[0m  SELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (4.4ms)
+Completed 200 OK in 69ms (Views: 63.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:10:22 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mShortStory Load (0.4ms)[0m  [1mSELECT "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (3.0ms)
+Completed 200 OK in 122ms (Views: 116.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:19:48 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoem Load (0.3ms)[0m  SELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (4.1ms)
+Completed 200 OK in 80ms (Views: 74.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:19:58 +0300
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (4.0ms)
+Completed 200 OK in 75ms (Views: 68.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:20:03 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (2.2ms)
+Completed 200 OK in 79ms (Views: 66.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:20:07 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (4.2ms)
+Completed 200 OK in 74ms (Views: 69.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:20:10 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (2.0ms)
+Completed 200 OK in 71ms (Views: 66.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:20:13 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPoem Load (0.4ms)[0m  [1mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 82ms (Views: 69.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/poems/new" for ::1 at 2016-06-08 19:20:20 +0300
+Processing by PoemsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered poems/_form.html.slim (3.9ms)
+  Rendered poems/new.html.slim within layouts/application (6.1ms)
+Completed 200 OK in 78ms (Views: 73.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:20:31 +0300
+Processing by ProfilesController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (4.3ms)
+Completed 200 OK in 86ms (Views: 81.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:32:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#show as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (69.0ms)
+Completed 200 OK in 662ms (Views: 559.8ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:32:39 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mShortStory Load (0.2ms)[0m  [1mSELECT "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (10.5ms)
+Completed 200 OK in 82ms (Views: 76.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:32:43 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoem Load (0.3ms)[0m  SELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (25.1ms)
+Completed 200 OK in 99ms (Views: 92.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:34:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.8ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.2ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (56.7ms)
+Completed 200 OK in 700ms (Views: 576.9ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/assets/scaffolds.self-c69894ed60b77f1821587c22be3c97f01a3a714340a1d8c3ea453dae3129a14d.css?body=1" for ::1 at 2016-06-08 19:34:12 +0300
+
+
+Started GET "/assets/application.self-234b1fc97d45949c800ae04401a70719cee891ae8f6d1895198a93d52c76401b.css?body=1" for ::1 at 2016-06-08 19:34:12 +0300
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:34:19 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (undefined method `total_pages' for nil:NilClass):
+    1: - model_class = ShortStory
+    2: .page-header
+    3:   h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+    4: = paginate @poems
+    5: table.table.table-striped
+    6:   thead
+    7:     tr
+  app/views/short_stories/index.html.slim:4:in `_app_views_short_stories_index_html_slim___2263172560658308050_70216298559060'
+
+
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.6ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (64.0ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:34:30 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `total_pages' for nil:NilClass):
+    1: - model_class = ShortStory
+    2: .page-header
+    3:   h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+    4: = paginate @poems
+    5: table.table.table-striped
+    6:   thead
+    7:     tr
+  app/views/short_stories/index.html.slim:4:in `_app_views_short_stories_index_html_slim___2263172560658308050_70216298559060'
+
+
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.9ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (23.2ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.7ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:34:34 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.2ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (7.2ms)
+Completed 200 OK in 95ms (Views: 90.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:34:48 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `total_pages' for nil:NilClass):
+    1: - model_class = ShortStory
+    2: .page-header
+    3:   h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+    4: = paginate @poems
+    5: table.table.table-striped
+    6:   thead
+    7:     tr
+  app/views/short_stories/index.html.slim:4:in `_app_views_short_stories_index_html_slim___2263172560658308050_70216298559060'
+
+
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.1ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.3ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.7ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.0ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:34:51 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (8.5ms)
+Completed 200 OK in 79ms (Views: 74.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:36:11 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `total_pages' for nil:NilClass):
+    1: - model_class = ShortStory
+    2: .page-header
+    3:   h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+    4: = paginate @poems
+    5: table.table.table-striped
+    6:   thead
+    7:     tr
+  app/views/short_stories/index.html.slim:4:in `_app_views_short_stories_index_html_slim___2263172560658308050_70216298559060'
+
+
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.8ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kirill/.rvm/gems/ruby-2.1.5@poetry/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.5ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:36:27 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  [1m[36mShortStory Load (0.2ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (44.4ms)
+Completed 200 OK in 639ms (Views: 518.8ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/short_stories/new" for ::1 at 2016-06-08 19:36:33 +0300
+Processing by ShortStoriesController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered short_stories/_form.html.slim (43.0ms)
+  Rendered short_stories/new.html.slim within layouts/application (49.2ms)
+Completed 200 OK in 135ms (Views: 118.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:36:37 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.2ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (48.1ms)
+Completed 200 OK in 169ms (Views: 151.7ms | ActiveRecord: 4.9ms)
+
+
+Started DELETE "/poems/1" for ::1 at 2016-06-08 19:36:42 +0300
+Processing by PoemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OdxOyJSGATRzjCH88ZhcKM6SaIAD39EJiinm4u8xN7Z6UetgTaFvlLMBt9gAAbABNzqi7mo6o149o5KTwXIWog==", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mPoem Load (0.6ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "poems_tags" WHERE "poems_tags"."poem_id" = $1[0m  [["poem_id", 1]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "poems" WHERE "poems"."id" = $1  [["id", 1]]
+  [1m[36m (5.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/poems
+Completed 302 Found in 21ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:36:42 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (8.5ms)
+Completed 200 OK in 79ms (Views: 71.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/poems/new" for ::1 at 2016-06-08 19:36:44 +0300
+Processing by PoemsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered poems/_form.html.slim (18.8ms)
+  Rendered poems/new.html.slim within layouts/application (24.3ms)
+Completed 200 OK in 115ms (Views: 108.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/poems" for ::1 at 2016-06-08 19:36:50 +0300
+Processing by PoemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wKOv/sc+SUFd1c2Iw2KVaPxRfVUSm3cHLMikX54HeeKDLgpWHhkn4Z1YW6wy+3lBBfm3O3t+BVCbQtAusERY9g==", "poem"=>{"title"=>"tes", "content"=>"test", "metaphor"=>"tes"}, "tags_id"=>"", "commit"=>"Create Poem"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.3ms)[0m  [1mINSERT INTO "poems" ("title", "content", "metaphor", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "tes"], ["content", "test"], ["metaphor", "tes"], ["user_id", 1], ["created_at", "2016-06-08 16:36:50.591715"], ["updated_at", "2016-06-08 16:36:50.591715"]]
+  [1m[35m (5.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/poems/2
+Completed 302 Found in 21ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/poems/2" for ::1 at 2016-06-08 19:36:50 +0300
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mPoem Load (0.3ms)[0m  SELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "poems_tags" ON "tags"."id" = "poems_tags"."tag_id" WHERE "poems_tags"."poem_id" = $1[0m  [["poem_id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered poems/show.html.slim within layouts/application (19.8ms)
+Completed 200 OK in 104ms (Views: 98.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/poems/2/edit" for ::1 at 2016-06-08 19:36:55 +0300
+Processing by PoemsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mPoem Load (0.4ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT "tags"."name" FROM "tags" INNER JOIN "poems_tags" ON "tags"."id" = "poems_tags"."tag_id" WHERE "poems_tags"."poem_id" = $1  [["poem_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "poems_tags" ON "tags"."id" = "poems_tags"."tag_id" WHERE "poems_tags"."poem_id" = $1[0m  [["poem_id", 2]]
+  Rendered poems/_form.html.slim (6.6ms)
+  Rendered poems/edit.html.slim within layouts/application (13.9ms)
+Completed 200 OK in 92ms (Views: 84.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:36:58 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  [1m[36mShortStory Load (0.2ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (6.3ms)
+Completed 200 OK in 85ms (Views: 79.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:37:00 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (9.2ms)
+Completed 200 OK in 86ms (Views: 79.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/poems/2/edit" for ::1 at 2016-06-08 19:37:03 +0300
+Processing by PoemsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mPoem Load (0.4ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  SELECT "tags"."name" FROM "tags" INNER JOIN "poems_tags" ON "tags"."id" = "poems_tags"."tag_id" WHERE "poems_tags"."poem_id" = $1  [["poem_id", 2]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "poems_tags" ON "tags"."id" = "poems_tags"."tag_id" WHERE "poems_tags"."poem_id" = $1[0m  [["poem_id", 2]]
+  Rendered poems/_form.html.slim (7.2ms)
+  Rendered poems/edit.html.slim within layouts/application (9.1ms)
+Completed 200 OK in 91ms (Views: 83.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:37:05 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  [1m[36mShortStory Load (0.3ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (6.6ms)
+Completed 200 OK in 96ms (Views: 79.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/short_stories/new" for ::1 at 2016-06-08 19:37:06 +0300
+Processing by ShortStoriesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered short_stories/_form.html.slim (3.6ms)
+  Rendered short_stories/new.html.slim within layouts/application (6.0ms)
+Completed 200 OK in 106ms (Views: 102.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/short_stories" for ::1 at 2016-06-08 19:37:15 +0300
+Processing by ShortStoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t8/7zuiYF1eyDc+YMs4YkGE3nKwKycjB5stmPk56Pzb0Ql5mMb9593KAWbzDV/S5mJ9WwmMsupZRQRJPYDkeIg==", "short_story"=>{"title"=>"test", "content"=>"test love", "short_description"=>"test"}, "tags_id"=>"1", "commit"=>"Create Short story"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mTag Load (0.7ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "short_stories" ("title", "content", "short_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "test"], ["content", "test love"], ["short_description", "test"], ["user_id", 1], ["created_at", "2016-06-08 16:37:15.450864"], ["updated_at", "2016-06-08 16:37:15.450864"]]
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "short_stories_tags" ("tag_id", "short_story_id") VALUES ($1, $2) RETURNING "id"[0m  [["tag_id", 1], ["short_story_id", 1]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/short_stories/1
+Completed 302 Found in 31ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:37:15 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mShortStory Load (0.2ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1[0m  [["short_story_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (17.9ms)
+Completed 200 OK in 101ms (Views: 95.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:37:24 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (0.4ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1[0m  [["short_story_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (9.7ms)
+Completed 200 OK in 101ms (Views: 95.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:37:26 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (0.5ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1[0m  [["short_story_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (11.7ms)
+Completed 200 OK in 83ms (Views: 76.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:37:27 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mShortStory Load (0.4ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (0.4ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1[0m  [["short_story_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (12.0ms)
+Completed 200 OK in 100ms (Views: 93.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:37:31 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mShortStory Load (0.4ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (1.2ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36mTag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1[0m  [["short_story_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (11.8ms)
+Completed 200 OK in 80ms (Views: 73.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:37:32 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1[0m  [["short_story_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (10.6ms)
+Completed 200 OK in 88ms (Views: 83.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:37:50 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1[0m  [["short_story_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (10.2ms)
+Completed 200 OK in 92ms (Views: 85.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:38:23 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0  [["user_id", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (8.8ms)
+Completed 200 OK in 81ms (Views: 75.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:38:27 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.2ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (8.6ms)
+Completed 200 OK in 86ms (Views: 80.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:38:29 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mShortStory Load (0.4ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0  [["user_id", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (8.8ms)
+Completed 200 OK in 88ms (Views: 82.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/short_stories/new" for ::1 at 2016-06-08 19:38:47 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ShortStoriesController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered short_stories/_form.html.slim (49.6ms)
+  Rendered short_stories/new.html.slim within layouts/application (81.8ms)
+Completed 200 OK in 610ms (Views: 518.1ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/short_stories" for ::1 at 2016-06-08 19:38:54 +0300
+Processing by ShortStoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3gUKrY3oVTEiZzQEu2SFHrTameFlOZLGLYwKpas71A+diK8FVM87keLqoiBK/Wk3TXJTjwzc4JGaBn7UhXj1Gw==", "short_story"=>{"title"=>"test", "content"=>"test", "short_description"=>"test"}, "tags_id"=>"", "commit"=>"Create Short story"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "short_stories" ("title", "content", "short_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "test"], ["content", "test"], ["short_description", "test"], ["user_id", 1], ["created_at", "2016-06-08 16:38:54.879474"], ["updated_at", "2016-06-08 16:38:54.879474"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/short_stories/2
+Completed 302 Found in 24ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/short_stories/2" for ::1 at 2016-06-08 19:38:54 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mShortStory Load (0.7ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (0.6ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36mTag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1[0m  [["short_story_id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (36.1ms)
+Completed 200 OK in 120ms (Views: 108.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:38:56 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0  [["user_id", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (28.5ms)
+Completed 200 OK in 121ms (Views: 110.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/short_stories/new" for ::1 at 2016-06-08 19:39:05 +0300
+Processing by ShortStoriesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered short_stories/_form.html.slim (3.8ms)
+  Rendered short_stories/new.html.slim within layouts/application (61.9ms)
+Completed 200 OK in 160ms (Views: 156.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:39:22 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.4ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (31.7ms)
+Completed 200 OK in 110ms (Views: 96.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/exit" for ::1 at 2016-06-08 19:39:32 +0300
+Processing by ProfilesController#exit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/poems
+Completed 302 Found in 12ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:39:32 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "poems"
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (10.7ms)
+Completed 200 OK in 84ms (Views: 71.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 19:39:34 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 90ms (Views: 84.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:39:39 +0300
+Processing by ProfilesController#show as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 19:39:39 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 105ms (Views: 102.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-06-08 19:40:26 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gBBYtVb846E4GGj06cWxsWPPFG7br4cU9Fu1sm0Ou2jDnf0dj9uNAfiV/tAYXF2YmmfeALJK9UND0cHDQ02afA==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "admin@example.com"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3 WHERE "users"."id" = $4[0m  [["last_sign_in_at", "2016-06-08 16:09:06.951483"], ["current_sign_in_at", "2016-06-08 16:40:26.270289"], ["sign_in_count", 3], ["id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 178ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:40:26 +0300
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (12.1ms)
+Completed 200 OK in 84ms (Views: 77.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:40:31 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  [1m[36mShortStory Load (0.3ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (10.2ms)
+Completed 200 OK in 84ms (Views: 76.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:40:32 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mPoem Load (0.4ms)[0m  SELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0  [["user_id", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (10.2ms)
+Completed 200 OK in 76ms (Views: 68.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:41:22 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mProfile Load (0.1ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (7.4ms)
+Completed 200 OK in 94ms (Views: 88.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:41:23 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0  [["user_id", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (10.6ms)
+Completed 200 OK in 89ms (Views: 80.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:41:32 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (9.3ms)
+Completed 200 OK in 78ms (Views: 72.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:41:35 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mShortStory Load (0.2ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0  [["user_id", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (10.0ms)
+Completed 200 OK in 87ms (Views: 81.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:41:38 +0300
+Processing by ProfilesController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (5.3ms)
+Completed 200 OK in 73ms (Views: 67.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/profile/edit" for ::1 at 2016-06-08 19:41:40 +0300
+Processing by ProfilesController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered profiles/_form.html.slim (8.4ms)
+  Rendered profiles/edit.html.slim within layouts/application (15.6ms)
+Completed 200 OK in 86ms (Views: 80.5ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/profiles/1" for ::1 at 2016-06-08 19:41:48 +0300
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"btQMJ/y+mg+XbRBsV3ZPl1KTvF9auY/htCKFcyDY4fCY0YDAd1S30E0LhE/dli35ZmYihCYXCR4BWG2r2H/hQg==", "profile"=>{"name"=>"test", "biography"=>"test"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "profiles" SET "name" = $1, "biography" = $2 WHERE "profiles"."id" = $3  [["name", "test"], ["biography", "test"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 13ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/profiles/1" for ::1 at 2016-06-08 19:41:48 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (5.7ms)
+Completed 200 OK in 85ms (Views: 76.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:41:50 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0  [["user_id", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (10.5ms)
+Completed 200 OK in 80ms (Views: 74.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/short_stories/new" for ::1 at 2016-06-08 19:42:13 +0300
+Processing by ShortStoriesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered short_stories/_form.html.slim (4.3ms)
+  Rendered short_stories/new.html.slim within layouts/application (6.1ms)
+Completed 200 OK in 81ms (Views: 75.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:42:15 +0300
+Processing by ProfilesController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (5.5ms)
+Completed 200 OK in 87ms (Views: 80.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/profile/edit" for ::1 at 2016-06-08 19:42:17 +0300
+Processing by ProfilesController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mProfile Load (0.6ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered profiles/_form.html.slim (2.6ms)
+  Rendered profiles/edit.html.slim within layouts/application (4.3ms)
+Completed 200 OK in 84ms (Views: 78.2ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/profiles/1" for ::1 at 2016-06-08 19:43:37 +0300
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JpH3cjh5WTfpheG2VtrmfNBwa3i3Z8q7tw09YEw35USn8s6QwvIuwXAg6VTuwn3x7Rfdp5zGdVbptwteZffJw==", "profile"=>{"name"=>"test", "biography"=>"test"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/profiles/1" for ::1 at 2016-06-08 19:43:37 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (3.7ms)
+Completed 200 OK in 73ms (Views: 67.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:43:51 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (8.9ms)
+Completed 200 OK in 79ms (Views: 74.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:43:53 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0  [["user_id", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (9.3ms)
+Completed 200 OK in 95ms (Views: 88.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:47:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#show as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mProfile Load (0.4ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (63.9ms)
+Completed 200 OK in 652ms (Views: 539.6ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:47:36 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mShortStory Load (2.4ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (35.2ms)
+Completed 200 OK in 105ms (Views: 95.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:47:38 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mPoem Load (0.2ms)[0m  SELECT  "poems".* FROM "poems" WHERE "poems"."user_id" = $1 LIMIT 25 OFFSET 0  [["user_id", 1]]
+  Rendered poems/index.html.slim within layouts/application (26.2ms)
+Completed 200 OK in 106ms (Views: 100.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:47:42 +0300
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems" WHERE "poems"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered profiles/show.html.slim within layouts/application (6.4ms)
+Completed 200 OK in 137ms (Views: 131.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/profile/edit" for ::1 at 2016-06-08 19:47:46 +0300
+Processing by ProfilesController#edit as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered profiles/_form.html.slim (22.4ms)
+  Rendered profiles/edit.html.slim within layouts/application (28.4ms)
+Completed 200 OK in 98ms (Views: 92.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:50:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "short_stories" WHERE "short_stories"."user_id" = $1  [["user_id", 1]]
+  [1m[36mShortStory Load (0.3ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."user_id" = $1 LIMIT 25 OFFSET 0[0m  [["user_id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (55.9ms)
+Completed 200 OK in 577ms (Views: 483.0ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:50:51 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mShortStory Load (0.3ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProfile Load (0.7ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1  [["short_story_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (49.3ms)
+Completed 200 OK in 125ms (Views: 108.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/exit" for ::1 at 2016-06-08 19:51:02 +0300
+Processing by ProfilesController#exit as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/short_stories/1
+Completed 302 Found in 19ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:51:02 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTag Load (0.7ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mShortStory Load (0.3ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mTag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1  [["short_story_id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (14.7ms)
+Completed 200 OK in 126ms (Views: 119.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:51:09 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfile Load (0.3ms)[0m  SELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1[0m  [["short_story_id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (5.9ms)
+Completed 200 OK in 74ms (Views: 68.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/short_stories/1" for ::1 at 2016-06-08 19:51:12 +0300
+Processing by ShortStoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mShortStory Load (0.2ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" WHERE "short_stories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "short_stories_tags" ON "tags"."id" = "short_stories_tags"."tag_id" WHERE "short_stories_tags"."short_story_id" = $1  [["short_story_id", 1]]
+  Rendered short_stories/show.html.slim within layouts/application (8.5ms)
+Completed 200 OK in 79ms (Views: 74.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:51:14 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems"
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered poems/index.html.slim within layouts/application (28.1ms)
+Completed 200 OK in 100ms (Views: 88.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/poems/new" for ::1 at 2016-06-08 19:51:17 +0300
+Processing by PoemsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 19:51:17 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTag Load (1.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 112ms (Views: 104.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 19:51:19 +0300
+Processing by ProfilesController#show as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 19:51:19 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 76ms (Views: 72.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 19:51:21 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "short_stories"
+  [1m[36mShortStory Load (0.3ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (12.6ms)
+Completed 200 OK in 90ms (Views: 84.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 19:51:22 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "poems"[0m
+  [1m[35mPoem Load (0.3ms)[0m  SELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered poems/index.html.slim within layouts/application (8.8ms)
+Completed 200 OK in 88ms (Views: 83.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 20:10:53 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "short_stories"[0m
+  [1m[35mShortStory Load (0.4ms)[0m  SELECT  "short_stories".* FROM "short_stories" LIMIT 25 OFFSET 0
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (12.3ms)
+Completed 200 OK in 95ms (Views: 91.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 20:10:56 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 73ms (Views: 68.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/short_stories/new" for ::1 at 2016-06-08 20:10:59 +0300
+Processing by ShortStoriesController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 20:10:59 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 75ms (Views: 71.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/short_stories/new" for ::1 at 2016-06-08 20:11:23 +0300
+Processing by ShortStoriesController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 20:11:23 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 80ms (Views: 76.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 20:12:17 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "poems"[0m
+  [1m[35mPoem Load (0.3ms)[0m  SELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered poems/index.html.slim within layouts/application (9.4ms)
+Completed 200 OK in 90ms (Views: 86.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 20:12:21 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM "short_stories"[0m
+  [1m[35mShortStory Load (0.4ms)[0m  SELECT  "short_stories".* FROM "short_stories" LIMIT 25 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (15.2ms)
+Completed 200 OK in 83ms (Views: 76.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 20:12:30 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems"
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered poems/index.html.slim within layouts/application (8.6ms)
+Completed 200 OK in 77ms (Views: 73.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 20:12:33 +0300
+Processing by ProfilesController#show as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 20:12:33 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 72ms (Views: 67.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 20:12:35 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "short_stories"[0m
+  [1m[35mShortStory Load (0.4ms)[0m  SELECT  "short_stories".* FROM "short_stories" LIMIT 25 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (12.1ms)
+Completed 200 OK in 99ms (Views: 94.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 20:12:38 +0300
+Processing by ProfilesController#show as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 20:12:38 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 73ms (Views: 69.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 20:12:43 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "short_stories"[0m
+  [1m[35mShortStory Load (0.4ms)[0m  SELECT  "short_stories".* FROM "short_stories" LIMIT 25 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (11.1ms)
+Completed 200 OK in 78ms (Views: 74.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 20:12:44 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems"
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered poems/index.html.slim within layouts/application (10.9ms)
+Completed 200 OK in 92ms (Views: 87.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 20:13:00 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems"
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered poems/index.html.slim within layouts/application (10.8ms)
+Completed 200 OK in 97ms (Views: 93.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 20:13:02 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "short_stories"
+  [1m[36mShortStory Load (0.3ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (11.7ms)
+Completed 200 OK in 102ms (Views: 97.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/short_stories/new" for ::1 at 2016-06-08 20:13:04 +0300
+Processing by ShortStoriesController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 20:13:04 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 75ms (Views: 71.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 20:14:09 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "poems"
+  [1m[36mPoem Load (0.4ms)[0m  [1mSELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered poems/index.html.slim within layouts/application (13.5ms)
+Completed 200 OK in 96ms (Views: 88.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 20:14:10 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "short_stories"
+  [1m[36mShortStory Load (0.3ms)[0m  [1mSELECT  "short_stories".* FROM "short_stories" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (13.1ms)
+Completed 200 OK in 125ms (Views: 120.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 20:15:01 +0300
+Processing by PoemsController#index as HTML
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "poems"[0m
+  [1m[35mPoem Load (0.4ms)[0m  SELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered poems/index.html.slim within layouts/application (9.7ms)
+Completed 200 OK in 82ms (Views: 76.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 20:15:04 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "short_stories"[0m
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" LIMIT 25 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (11.5ms)
+Completed 200 OK in 80ms (Views: 75.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 20:15:07 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems"
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered poems/index.html.slim within layouts/application (9.7ms)
+Completed 200 OK in 81ms (Views: 77.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 20:15:52 +0300
+Processing by ProfilesController#show as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-08 20:15:52 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 90ms (Views: 85.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/short_stories" for ::1 at 2016-06-08 20:15:57 +0300
+Processing by ShortStoriesController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "short_stories"[0m
+  [1m[35mShortStory Load (0.3ms)[0m  SELECT  "short_stories".* FROM "short_stories" LIMIT 25 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered short_stories/index.html.slim within layouts/application (12.7ms)
+Completed 200 OK in 82ms (Views: 77.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/poems" for ::1 at 2016-06-08 20:15:58 +0300
+Processing by PoemsController#index as HTML
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "poems"
+  [1m[36mPoem Load (0.3ms)[0m  [1mSELECT  "poems".* FROM "poems" LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered poems/index.html.slim within layouts/application (8.9ms)
+Completed 200 OK in 94ms (Views: 88.1ms | ActiveRecord: 1.2ms)

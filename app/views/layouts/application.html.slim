@@ -1,0 +1,33 @@
+doctype html
+html
+head
+  title PoemsBlog
+  = stylesheet_link_tag    'application', media: 'all'
+  = javascript_include_tag 'application'
+  = csrf_meta_tags
+body
+  .main
+    .header-menu-nav
+      .left
+        = link_to '/' do
+          | Main
+        = link_to short_stories_path do
+          | Stories
+        = link_to poems_path do
+          | Poems
+      .right
+        - if current_user.present?
+          = link_to '/exit', class: 'btn btn-primary' do
+            | Log out
+        - else
+          = link_to '/users/sign_in', class: 'btn btn-primary' do
+            | Log in
+
+
+
+    = yield
+  .footer
+    span.hide data-tags-json=''
+      = @tags_list
+    p
+      | Created by Kirill Sukhorukov 2016
