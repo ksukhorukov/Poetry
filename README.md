@@ -15,10 +15,13 @@ The application should be functional and without errors. Please submit your code
 
 ### SETUP
 
-$bundle
+``$bundle
+
 $rake db:setup
+
 $rspec
-$rails s
+
+$rails s``
 
 Enjoy! 
 
